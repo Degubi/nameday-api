@@ -9,9 +9,9 @@ public enum Temporal {
     TODAY("/today"),
     TOMORROW("/tomorrow"),
     YESTERDAY("yesterday");
-    
+
     final String endPoint;
-    
+
     Temporal(String endPoint) {
         this.endPoint = endPoint;
     }

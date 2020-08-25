@@ -5,7 +5,7 @@ package namedayapi;
  * @author Degubi
  */
 public enum Country {
-    
+
     BULGARIA("bg"),
     CROATIA("hr"),
     CZECHIA("cz"),
@@ -25,22 +25,22 @@ public enum Country {
     SPAIN("es"),
     SWEDEN("se"),
     USA("us");
-    
+
     private static final Country[] VALUES = values();
-    
+
     final String code;
-    
+
     Country(String code) {
         this.code = code;
     }
-    
+
     static Country fromCode(String code) {
         for(var country : VALUES) {
             if(country.code.equals(code)) {
                 return country;
             }
         }
-        
+
         throw new IllegalArgumentException("Unkown country code: '" + code + "'");
     }
 }

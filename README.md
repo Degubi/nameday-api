@@ -7,15 +7,19 @@ For examples check the 'Usage' section.
 
 ## Installation
 
-Maven dependency: (not yet available)
+**Maven dependency:** (via Github Packages)
 
 ```xml
-<groupId>namedayapi</groupId>
-<artifactId>NamedayApi</artifactId>
-<version>1.0</version>
+<dependency>
+  <groupId>nameday.NamedayApi</groupId>
+  <artifactId>namedayapi</artifactId>
+  <version>1.0</version>
+</dependency>
 ```
 
-Jar file: Under releases
+**Jar file:**
+<br><br>
+Downloads are available under 'Releases'
 
 ## List of supported Countries & TimeZones
 
