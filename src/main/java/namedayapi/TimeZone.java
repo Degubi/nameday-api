@@ -29,9 +29,9 @@ public enum TimeZone {
     ISRAEL("Israel"),
     ETC_GMT_2("Etc/GMT-2"),
     ETC_GMT_6("Etc/GMT-6");
-    
+
     final String value;
-    
+
     TimeZone(String value) {
         this.value = value;
     }

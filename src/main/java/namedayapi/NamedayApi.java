@@ -28,7 +28,7 @@ public final class NamedayApi {
     public static CompletableFuture<Map<Country, List<String>>> getNamedays(Temporal date) {
         return sendRequest(API_URL + date.endPoint).thenApply(NamedayApi::groupByCountry);
     }
-    
+
     /**
      * Function for fetching namedays filtered by the specified country.
      * @param country Country
@@ -37,7 +37,7 @@ public final class NamedayApi {
     public static CompletableFuture<List<String>> getNamedays(Temporal date, Country country) {
         return sendRequest(API_URL + date.endPoint + "?country=" + country.code).thenApply(k -> splitNames(k, country));
     }
-    
+
     /**
      * Function for fetching namedays filtered by the specified timeZone.
      * @param timeZone TimeZone
@@ -46,7 +46,7 @@ public final class NamedayApi {
     public static CompletableFuture<Map<Country, List<String>>> getNamedays(Temporal date, TimeZone timeZone) {
         return sendRequest(API_URL + date.endPoint + "?timezone=" + timeZone.value).thenApply(NamedayApi::groupByCountry);
     }
-    
+
     /**
      * Function for fetching namedays filtered by the specified country.
      * @param country Country
@@ -58,7 +58,7 @@ public final class NamedayApi {
     public static CompletableFuture<List<String>> getNamedays(Temporal date, Country country, TimeZone timeZone) {
         return sendRequest(API_URL + date.endPoint + "?country=" + country.code + "&timezone=" + timeZone.value).thenApply(k -> splitNames(k, country));
     }
-    
+
     /**
      * Function for fetching namedays for specific dates filtered by the specified country.
      * This function doesn't use a Date object, because the Api doesn't support all variations of requests.
@@ -70,7 +70,7 @@ public final class NamedayApi {
     public static CompletableFuture<List<String>> getNamedays(Month month, int day, Country country) {
         return sendRequest(API_URL + "/namedays?country=" + country.code + "&month=" + month.getValue() + "&day=" + day).thenApply(k -> splitNames(k, country));
     }
-    
+
     /**
      * Function for searching names inside the specified country.
      * @param searchedName Searched Name
@@ -80,34 +80,34 @@ public final class NamedayApi {
     public static CompletableFuture<Map<Month, List<Integer>>> searchForName(String searchedName, Country country) {
         return sendRequest(API_URL + "/getdate?name=" + searchedName + "&country=" + country.code).thenApply(NamedayApi::groupByDate);
     }
-    
-    
-    
+
+
+
     private static List<String> splitNames(JsonObject obj, Country country) {
         return Arrays.asList(NAME_SEPARATOR_PATTERN.split(obj.getJsonObject("data")
                                                              .getJsonObject("namedays")
                                                              .getString(country.code)));
     }
-    
+
     @SuppressWarnings("boxing")
     private static Map<Month, List<Integer>> groupByDate(JsonObject obj) {
         return obj.getJsonArray("results").stream()
                   .map(JsonValue::asJsonObject)
                   .collect(Collectors.groupingBy(k -> Month.of(k.getInt("month")), Collectors.mapping(k -> k.getInt("day"), Collectors.toList())));
     }
-    
+
     private static Map<Country, List<String>> groupByCountry(JsonObject obj) {
         var response = obj.getJsonObject("namedays").getJsonObject("data");
-           
+
         return response.keySet().stream()
                        .collect(Collectors.toMap(Country::fromCode, l -> Arrays.asList(NAME_SEPARATOR_PATTERN.split(response.getString(l)))));
     }
-    
+
     private static CompletableFuture<JsonObject> sendRequest(String url) {
         return CLIENT.sendAsync(HttpRequest.newBuilder(URI.create(url)).build(),
                            info -> BodySubscribers.mapping(BodySubscribers.ofByteArray(), data -> JSONB.fromJson(new String(data), JsonObject.class)))
                      .thenApply(HttpResponse::body);
     }
-    
+
     private NamedayApi() {}
 }
