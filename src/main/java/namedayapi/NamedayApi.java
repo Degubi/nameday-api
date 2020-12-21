@@ -51,10 +51,8 @@ public final class NamedayApi {
      * Function for fetching namedays filtered by the specified country.
      * @param country Country
      * @return List of names
-     * @deprecated Reason: This endpoint is in the official documentation, but it seems it's broken at the moment. This function is still here
      * If the endpoint gets removed delete this function, else remove deprecation.
      */
-    @Deprecated
     public static CompletableFuture<List<String>> getNamedays(Temporal date, Country country, TimeZone timeZone) {
         return sendRequest(API_URL + date.endPoint + "?country=" + country.code + "&timezone=" + timeZone.value).thenApply(k -> splitNames(k, country));
     }

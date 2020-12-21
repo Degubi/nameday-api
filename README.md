@@ -19,7 +19,7 @@ For examples check the 'Usage' section.
 
 **Jar file:**
 <br><br>
-Downloads are available under 'Releases'
+Jar file downloads are available under 'Packages'
 
 ## List of supported Countries & TimeZones
 
@@ -34,19 +34,22 @@ Most of the functions are overloaded for Temporal/Country/TimeZone. They all ret
 The data is grouped depending on the type of the request.
 
 ```java
-// List of names for today grouped by Country
+// List of names grouped by Country for today
 NamedayApi.getNamedays(Temporal.TODAY);
 
 // List of names for tomorrow in the USA
 NamedayApi.getNamedays(Temporal.TOMORROW, Country.USA);
 
-// List of names in the Europe/Prague zone grouped by Country
+// List of names grouped by Country for yesterday with Europe/Prague time zone specification 
 NamedayApi.getNamedays(Temporal.YESTERDAY, TimeZone.EUROPE_PRAGUE);
 
-// List of names on the 1st of Aprin in Denmark
+// List of names for today in Hungary with Europe/Amsterdam time zone specification
+NamedayApi.getNamedays(Temporal.TODAY, Country.HUNGARY, TimeZone.EUROPE_AMSTERDAM)
+
+// List of names on the 1st of April in Denmark
 NamedayApi.getNamedays(Month.APRIL, 1, Country.DENMARK);
 
-// List of days grouped by Month
+// List of days grouped by Month for the name 'John' in Spain
 NamedayApi.searchForName("John", Country.SPAIN);
 ```
 
