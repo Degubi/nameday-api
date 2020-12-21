@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>nameday</groupId>
-  <artifactId>NamedayApi</artifactId>
+  <groupId>degubi</groupId>
+  <artifactId>nameday-api</artifactId>
   <version>1.0</version>
   
   <dependencies>
@@ -26,8 +26,8 @@
   
   <distributionManagement>
     <repository>
-      <id>Degubi</id>
-      <name>nameday-api</name>
+      <id>github</id>
+      <name>GitHub Degubi Apache Maven Packages</name>
       <url>https://maven.pkg.github.com/Degubi/nameday-api</url>
     </repository>
   </distributionManagement>

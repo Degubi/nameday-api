@@ -11,8 +11,8 @@ For examples check the 'Usage' section.
 
 ```xml
 <dependency>
-  <groupId>nameday.NamedayApi</groupId>
-  <artifactId>namedayapi</artifactId>
+  <groupId>degubi</groupId>
+  <artifactId>nameday-api</artifactId>
   <version>1.0</version>
 </dependency>
 ```
