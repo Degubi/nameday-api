@@ -1,4 +1,7 @@
 # Official International Name days API library
+[![Github issues](https://img.shields.io/github/issues/Degubi/nameday-api?label=Issues&style=plastic&logo=github)](https://github.com/Degubi/nameday-api/issues)
+[![Linecount](https://img.shields.io/tokei/lines/github/degubi/nameday-api?label=Total%20Lines&logo=Github&style=plastic)](https://github.com/Degubi/nameday-api/tree/master/src/main/java)
+[![Dependencies](https://img.shields.io/badge/Dependencies-1-green?style=plastic&logo=Java)](https://github.com/Degubi/nameday-api/blob/master/package.json)
 
 ## Name day API library for [api.abalin.net](https://api.abalin.net)
 
@@ -13,7 +16,7 @@ For examples check the 'Usage' section.
 <dependency>
   <groupId>degubi</groupId>
   <artifactId>nameday-api</artifactId>
-  <version>1.0</version>
+  <version>1.2</version>
 </dependency>
 ```
 
