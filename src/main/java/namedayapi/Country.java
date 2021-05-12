@@ -6,6 +6,7 @@ package namedayapi;
  */
 public enum Country {
 
+    AUSTRIA("at"),
     BULGARIA("bg"),
     CROATIA("hr"),
     CZECHIA("cz"),

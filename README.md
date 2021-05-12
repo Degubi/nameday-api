@@ -3,9 +3,9 @@
 [![Linecount](https://img.shields.io/tokei/lines/github/degubi/nameday-api?label=Total%20Lines&logo=Github&style=plastic)](https://github.com/Degubi/nameday-api/tree/master/src/main/java)
 [![Dependencies](https://img.shields.io/badge/Dependencies-1-green?style=plastic&logo=Java)](https://github.com/Degubi/nameday-api/blob/master/package.json)
 
-## Name day API library for [api.abalin.net](https://api.abalin.net)
+## Name day API library for [nameday.abalin.net](https://nameday.abalin.net)
 
-This library makes it easy to send requests towards [api.abalin.net](https://api.abalin.net) API.  
+This library makes it easy to send requests towards [nameday.abalin.net](https://nameday.abalin.net) API.  
 For examples check the 'Usage' section.
 
 ## Installation
@@ -16,7 +16,7 @@ For examples check the 'Usage' section.
 <dependency>
   <groupId>degubi</groupId>
   <artifactId>nameday-api</artifactId>
-  <version>1.2</version>
+  <version>1.3.0</version>
 </dependency>
 ```
 
