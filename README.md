@@ -13,10 +13,15 @@ For examples check the 'Usage' section.
 **Maven dependency:** (via Github Packages)
 
 ```xml
+<repository>
+    <id>github</id>
+    <url>https://maven.pkg.github.com/Degubi/nameday-api</url>
+</repository>
+
 <dependency>
-  <groupId>degubi</groupId>
-  <artifactId>nameday-api</artifactId>
-  <version>1.3.0</version>
+    <groupId>degubi</groupId>
+    <artifactId>nameday-api</artifactId>
+    <version>1.3.0</version>
 </dependency>
 ```
 
